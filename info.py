@@ -113,13 +113,13 @@ OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'sampleupi@upi')
 
 # for stream
 IS_STREAM = is_enabled('IS_STREAM', True)
-BIN_CHANNEL = environ.get("BIN_CHANNEL", "-1001903548258")
+BIN_CHANNEL = environ.get("BIN_CHANNEL", "-1001773276762")
 if len(BIN_CHANNEL) == 0:
     print('Error - BIN_CHANNEL is missing, exiting now')
     exit()
 else:
     BIN_CHANNEL = int(BIN_CHANNEL)
-URL = environ.get("URL", "")
+URL = environ.get("URL", "alternative-mellisa-jiraiya-e6ca2684.koyeb.app/")
 if len(URL) == 0:
     print('Error - URL is missing, exiting now')
     exit()
