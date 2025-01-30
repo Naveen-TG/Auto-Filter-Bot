@@ -44,7 +44,10 @@ async def group_search(client, message):
     except:
         return
     if not await db.get_chat(message.chat.id):
-        total = int(message.chat.members_count)
+        if message.chat.members_count is not None:
+            total = int(message.chat.members_count)
+        else:
+            total = 0  # or some default value
         username = f'@{message.chat.username}' if message.chat.username else vp.invite_link
         await client.send_message(LOG_CHANNEL, script.NEW_GROUP_TXT.format(message.chat.title, message.chat.id, username, total))       
         await db.add_chat(message.chat.id, message.chat.title)
